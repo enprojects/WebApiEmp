@@ -43,8 +43,16 @@ namespace Application.DAL
         }
         public int Update()
         {
-            return Save();
+         
+         // https://forums.asp.net/t/2106995.aspx?What+is+the+usage+of+context+Entry+in+EF
+         // This will update db without searching pulling and updating the entity. It just attaches the the entity to the dataContext
+         //_context.Entry(stud).State = System.Data.Entity.EntityState.Modified;     
+        //   dbCtx.SaveChanges();   
+         return Save();
         }
+     
+     
+  
 
         private int Save()
         {
